@@ -11,13 +11,11 @@
                         <v-list-item-title style="margin-bottom:10px;">
                             
                             
-                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
                             [ Id :  {{data.id }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Address :  {{data.address }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ OrderId :  {{data.orderId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -100,7 +98,6 @@
             
             this.newValue = {
                 'address': '',
-                'orderId': 0,
             }
         },
         methods: {

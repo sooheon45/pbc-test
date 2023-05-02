@@ -37,7 +37,7 @@ spring:
             consumer:
               autoCommitOffset: false    # Disable Offset auto commit
               enableDlq: true
-              dlqName: dlq-untitled
+              dlqName: dlq-application
               dlqPartitions: 1         
         streams:
           binder:
@@ -50,10 +50,10 @@ spring:
       bindings:
         event-in:
           group: Product
-          destination: untitled
+          destination: application
           contentType: application/json
         event-out:
-          destination: untitled
+          destination: application
           contentType: application/json
 
 logging:
@@ -92,7 +92,7 @@ spring:
             consumer:
               autoCommitOffset: false    # Disable Offset auto commit
               enableDlq: true
-              dlqName: dlq-untitled
+              dlqName: dlq-application
               dlqPartitions: 1              
         streams:
           binder:
@@ -105,10 +105,10 @@ spring:
       bindings:
         event-in:
           group: Product
-          destination: untitled
+          destination: application
           contentType: application/json
         event-out:
-          destination: untitled
+          destination: application
           contentType: application/json
 
 
