@@ -37,7 +37,7 @@
                     @click="save"
                     v-else
             >
-                Save
+                IncreaseStock
             </v-btn>
             <v-btn
                     color="deep-purple lighten-2"

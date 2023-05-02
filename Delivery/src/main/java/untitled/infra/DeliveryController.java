@@ -19,7 +19,7 @@ public class DeliveryController {
     DeliveryRepository deliveryRepository;
 
     @RequestMapping(
-        value = "deliveries/{id}/c",
+        value = "deliveries/{id}/canceldelivery",
         method = RequestMethod.PUT,
         produces = "application/json;charset=UTF-8"
     )

@@ -6,10 +6,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import untitled.domain.*;
 
 @FeignClient(name = "Delivery", url = "${api.url.Delivery}")
 public interface DeliveryService {
-    @RequestMapping(method = RequestMethod.PUT, path = "/deliveries/{id}/c")
+    @RequestMapping(
+        method = RequestMethod.PUT,
+        path = "/deliveries/{id}/canceldelivery"
+    )
     public void cancelDelivery(
         @PathVariable("id") Long id,
         @RequestBody CancelDeliveryCommand cancelDeliveryCommand

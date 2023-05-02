@@ -36,6 +36,8 @@ public class OrderSagaSaga {
         );
 
         Delivery delivery = new Delivery();
+        delivery.setOrderId(event.getId());
+
         deliveryService.startDelivery(delivery);
 
         // Manual Offset Commit //
@@ -66,7 +68,7 @@ public class OrderSagaSaga {
                 decreaseStockCommand
             );
         } catch (Exception e) {
-            CancelDeliveryCommand cancelDeliveryCommad = new CancelDeliveryCommand();
+            CancelDeliveryCommand cancelDeliveryCommand = new CancelDeliveryCommand();
             /* Logic */
             cancelDeliveryCommand.setOrderId(event.getOrderId());
 
@@ -94,7 +96,7 @@ public class OrderSagaSaga {
             "\n\n##### listener OrderSaga : " + stockDecreased + "\n\n"
         );
 
-        updateStatusCommand updateStatusCommad = new updateStatusCommand();
+        UpdateStatusCommand updateStatusCommand = new UpdateStatusCommand();
         /* Logic */
         updateStatusCommand.setOrderId(event.getId());
 

@@ -13,7 +13,9 @@ public class DeliveryHateoasProcessor
     @Override
     public EntityModel<Delivery> process(EntityModel<Delivery> model) {
         model.add(
-            Link.of(model.getRequiredLink("self").getHref() + "/c").withRel("c")
+            Link
+                .of(model.getRequiredLink("self").getHref() + "/canceldelivery")
+                .withRel("canceldelivery")
         );
 
         return model;

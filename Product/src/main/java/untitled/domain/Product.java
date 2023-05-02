@@ -6,6 +6,7 @@ import javax.persistence.*;
 import lombok.Data;
 import org.springframework.context.ApplicationContext;
 import untitled.ProductApplication;
+import untitled.domain.StockIncreased;
 
 @Entity
 @Table(name = "Product_table")
@@ -19,6 +20,12 @@ public class Product {
     private String name;
 
     private Integer stock;
+
+    @PostPersist
+    public void onPostPersist() {
+        StockIncreased stockIncreased = new StockIncreased(this);
+        stockIncreased.publishAfterCommit();
+    }
 
     public static ProductRepository repository() {
         ProductRepository productRepository = applicationContext()
